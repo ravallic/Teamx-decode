@@ -1,0 +1,20 @@
+def get_map(one):
+    import xlrd
+
+    # x = the amount of pairs
+x = 87
+# getting work book values for short and long
+wb = xlrd.open_workbook('Project1Dictionary.xls')
+sh = wb.sheet_by_index(0)
+# dictionaries for the character and binary value
+Bin2Char = {}
+Char2Bin = {}
+
+for i in range(x):
+    char = sh.cell(i, 0).value
+    binVal = sh.cell(i, 1).value
+    # print out the character and binary value
+    print(char + ":" + binVal)
+    # add to the dictionary
+    Char2Bin[char] = binVal
+    Bin2Char[binVal] = char
